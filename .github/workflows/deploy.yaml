@@ -12,13 +12,9 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Lister les fichiers et dossiers
+    - name: Install AWS CLI
       run: |
-        ls -la
-    - name: Creer un nouveau fichier
-      run: |
-        touch newfile.text
-        
-    - name: Lister a nouveau les fichiers et dossiers
-      run: |
-        ls -la
+        sudo apt-get update
+        sudo apt-get install -y python3-pip
+        sudo pip3 install awscli
+      
